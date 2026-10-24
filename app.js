@@ -74,11 +74,7 @@ app.use(express.urlencoded({extended:true}));
 
 //user routes
 app.use("/", users);
-app.use("/",(req,res)=>{
-    res.redirect("/listings");
-}
 
-)
 
 //listing routes
 app.use("/listings", listings);
