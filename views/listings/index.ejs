@@ -1,0 +1,98 @@
+<% layout('/layouts/boilerplate') -%>
+<body>
+    <% const querySuffix = searchQuery ? '&q=' + encodeURIComponent(searchQuery) : ''; %>
+    <section id="filters" class="filter-bar" aria-label="Listing filters">
+      <div class="filter-row" id="filter-row">
+        <a href="/listings<%= searchQuery ? '?q=' + encodeURIComponent(searchQuery) : '' %>" class="filter <%= selectedCategory === '' ? 'active' : '' %>" <%= selectedCategory === '' ? 'aria-current="page"' : '' %>>
+            <div><i class="fa-solid fa-house" style="color: rgb(0, 0, 0);"></i></div>
+            <p>All</p>
+        </a>
+        <a href="/listings?category=trending<%= querySuffix %>" class="filter <%= selectedCategory === 'trending' ? 'active' : '' %>" <%= selectedCategory === 'trending' ? 'aria-current="page"' : '' %>>
+            <div><i class="fa-solid fa-fire " style="color: rgb(0, 0, 0);"></i></div>
+            <p>Trending</p>
+        </a>
+        <a href="/listings?category=iconic%20cities<%= querySuffix %>" class="filter <%= selectedCategory === 'iconic cities' ? 'active' : '' %>" <%= selectedCategory === 'iconic cities' ? 'aria-current="page"' : '' %>>
+            <div><i class="fa-solid fa-city" style="color: rgb(0, 0, 0);"></i></div>
+            <p>Iconic cities</p>
+        </a>
+        <a href="/listings?category=hotels<%= querySuffix %>" class="filter <%= selectedCategory === 'hotels' ? 'active' : '' %>" <%= selectedCategory === 'hotels' ? 'aria-current="page"' : '' %>>
+            <div><i class="fa-solid fa-hotel" style="color: rgb(0, 0, 0);"></i></div>
+            <p>Hotels</p>
+        </a>
+        <a href="/listings?category=Homestays<%= querySuffix %>" class="filter <%= selectedCategory === 'Homestays' ? 'active' : '' %>" <%= selectedCategory === 'Homestays' ? 'aria-current="page"' : '' %>>
+            <div><i class="fa-solid fa-house-chimney" style="color: rgb(0, 0, 0);"></i></div>
+            <p>Homestays</p>
+        </a>
+        <a href="/listings?category=Rooms<%= querySuffix %>" class="filter <%= selectedCategory === 'Rooms' ? 'active' : '' %>" <%= selectedCategory === 'Rooms' ? 'aria-current="page"' : '' %>>
+            <div><i class="fa-solid fa-bed" style="color: rgb(0, 0, 0);"></i></div>
+            <p>Rooms</p>
+        </a>
+        <a href="/listings?category=Castles<%= querySuffix %>" class="filter <%= selectedCategory === 'Castles' ? 'active' : '' %>" <%= selectedCategory === 'Castles' ? 'aria-current="page"' : '' %>>
+            <div><i class="fa-brands fa-fort-awesome" style="color: rgb(0, 0, 0);"></i></div>
+            <p>Castles</p>
+        </a>
+        <a href="/listings?category=Pools<%= querySuffix %>" class="filter <%= selectedCategory === 'Pools' ? 'active' : '' %>" <%= selectedCategory === 'Pools' ? 'aria-current="page"' : '' %>>
+            <div><i class="fa-solid fa-person-swimming" style="color: rgb(0, 0, 0);"></i></div>
+            <p>Pools</p>
+        </a>
+        <a href="/listings?category=Camps<%= querySuffix %>" class="filter <%= selectedCategory === 'Camps' ? 'active' : '' %>" <%= selectedCategory === 'Camps' ? 'aria-current="page"' : '' %>>
+            <div><i class="fa-solid fa-campground" style="color: rgb(0, 0, 0);"></i></div>
+            <p>Camps</p>
+        </a>
+        <a href="/listings?category=Farms<%= querySuffix %>" class="filter <%= selectedCategory === 'Farms' ? 'active' : '' %>" <%= selectedCategory === 'Farms' ? 'aria-current="page"' : '' %>>
+            <div><i class="fa-solid fa-building-wheat" style="color: rgb(0, 0, 0);"></i></div>
+            <p>Farms</p>
+        </a>
+        <a href="/listings?category=arctic<%= querySuffix %>" class="filter <%= selectedCategory === 'arctic' ? 'active' : '' %>" <%= selectedCategory === 'arctic' ? 'aria-current="page"' : '' %>>
+            <div><i class="fa-solid fa-igloo" style="color: rgb(0, 0, 0);"></i></div>
+            <p>arctic</p>
+        </a>
+        <a href="/listings?category=Beach%20villas<%= querySuffix %>" class="filter <%= selectedCategory === 'Beach villas' ? 'active' : '' %>" <%= selectedCategory === 'Beach villas' ? 'aria-current="page"' : '' %>>
+            <div><i class="fa-solid fa-umbrella-beach" style="color: rgb(0, 0, 0);"></i></div>
+            <p>Beach villas</p>
+        </a>
+        <a href="/listings?category=Desert%20nights<%= querySuffix %>" class="filter <%= selectedCategory === 'Desert nights' ? 'active' : '' %>" <%= selectedCategory === 'Desert nights' ? 'aria-current="page"' : '' %>>
+            <div><i class="fa-solid fa-mound" style="color: rgb(0, 0, 0);"></i></div>
+            <p>Desert nights</p>
+        </a>
+        <a href="/listings?category=Hill%20stays<%= querySuffix %>" class="filter <%= selectedCategory === 'Hill stays' ? 'active' : '' %>" <%= selectedCategory === 'Hill stays' ? 'aria-current="page"' : '' %>>
+            <div><i class="fa-solid fa-mountain-city" style="color: rgb(0, 0, 0);"></i></div>
+            <p>Hill stays</p>
+        </a>
+        <div class="tax-toggle">
+            <div class="form-check-reverse form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="switchCheckChecked" data-tax-rate="0.18" checked>
+                <label class="form-check-label" for="switchCheckChecked">After tax</label>
+            </div>
+        </div>
+        <button class="filter-more" id="filter-more" type="button" aria-expanded="false" aria-controls="filter-tray" hidden>
+            More filters <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="filter-tray" id="filter-tray" hidden></div>
+    </section>
+
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <% listings.forEach(listing => { %>
+            <a href="/listings/<%=listing._id%>" class="listing-link">
+            <div class="col " >
+                <div class="card listing-card h-100">
+                    <img src="<%= listing.image.url%>" class="card-img-top" alt="<%= listing.image.filename%>" style="height: 20rem;">
+                    <div class="card-img-overlay"></div>
+                    <div class="card-body">
+                        <b><%= listing.title %></b> <br>
+                        <%= listing.location %> <br>
+
+                        &#8377; <span class="listing-price" data-base-price="<%= listing.price %>"><%= Math.round(listing.price * 1.18).toLocaleString('en-IN') %></span> /night
+                        <i class="tax-info"> &nbsp; (incl. 18% GST)</i>
+                    </div>
+                </div>
+            </div>
+            </a>
+        <% }) %>
+        <% if (listings.length === 0) { %>
+            <p class="col-12 text-center"><%= searchQuery ? 'No listings match your search.' : 'No listings found in this category.' %></p>
+        <% } %>
+    </div>
+</body>

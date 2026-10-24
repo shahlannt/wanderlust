@@ -1,0 +1,23 @@
+<% layout("layouts/boilerplate") %>
+<main class="auth-shell">
+    <section class="auth-card">
+        <p class="auth-badge">Welcome Back</p>
+        <h1 class="auth-title">Sign In</h1>
+        <form action="/login" method="POST" novalidate class="needs-validation auth-form">
+            <div class="auth-field">
+                <label for="username" class="form-label">Username:</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+                <div class="invalid-feedback">Please provide a username.</div>
+                <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <div class="auth-field">
+                <label for="password" class="form-label">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+                <div class="invalid-feedback">Please provide a password.</div>
+                <div class="valid-feedback">Looks good!</div>
+            </div>
+            <button type="submit" class="btn btn-dark add-btn auth-submit">Sign In</button>
+        </form>
+    </section>
+</main>

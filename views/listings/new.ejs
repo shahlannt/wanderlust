@@ -1,0 +1,68 @@
+<% layout('/layouts/boilerplate') -%>
+<body>
+    <br>
+    <br>
+    <div class="row">
+    <div class="col-8 offset-2">
+    <h2>Create listing:</h2>
+    <form action="/listings" method="POST" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div >
+            <label for="title" class="form-label">Title:</label>
+            <input type="text" id="title" name="title"class="form-control" placeholder="add a title" required>
+            <div class="invalid-feedback">Please provide a title.</div>
+            <div class="valid-feedback">Looks good!</div><br>
+        </div>
+        <div >
+            <label for="description" class="form-label">Description:</label>
+            <textarea class="form-control"  id="description" name="description" required></textarea>
+            <div class="invalid-feedback">Please provide a description.</div>
+            <div class="valid-feedback">Looks good!</div><br>
+        </div>
+         <div >
+            <label for="image" class="form-label">Upload Image</label>
+            <input class="form-control" type="file" id="image" name="image" placeholder="enter image url"><br>
+        </div>
+        <div >
+                <label for="category" class="form-label">Category:</label>
+                <select class="form-select" type="text" id="category" name="category" aria-label="category" required>
+                    <option value="">select category</option>
+                    <option value="trending">Trending</option>
+                    <option value="iconic cities">Iconic cities</option>
+                    <option value="hotels">Hotels</option>
+                    <option value="Rooms">Rooms</option>
+                    <option value="Homestays">Homestays</option>
+                    <option value="Castles">Castles</option>
+                    <option value="Pools">Pools</option>
+                    <option value="Camps">Camps</option>
+                    <option value="Farms">Farms</option>
+                    <option value="arctic">arctic</option>
+                    <option value="Beach villas">Beach villas</option>
+                    <option value="Hill stays">Hill stays</option>
+                    <option value="Desert nights">Desert nights</option>
+                </select>
+            <div class="invalid-feedback">Please select a category.</div><br>
+            </div>
+        <div >
+            <label for="location"  class="form-label">Location:</label>
+            <input class="form-control" type="text" id="location" name="location" placeholder="enter location" required>
+            <div class="invalid-feedback">Please provide a location.</div><br>
+        </div>
+        <div class="row">
+           
+            <div class="col-md-4">
+                <label for="price" class="form-label">Price (in INR):</label>
+                <input class="form-control"  id="price" name="price"  placeholder="enter price" required>
+                <div class="invalid-feedback">Please provide a price.</div><br>
+            </div>
+             <div class="col-md-8">
+                <label for="country" class="form-label">Country:</label>
+                <input class="form-control" type="text" id="country" name="country" placeholder="Enter country" required>
+                <div class="invalid-feedback">Please provide a country.</div><br>
+            </div>
+        </div>
+        <button class="btn btn-dark add-btn">Add</button>
+        </form>
+        </div>
+    </div>
+    <br><br>
+</body>

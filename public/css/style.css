@@ -1,0 +1,469 @@
+body {
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    margin: 0;
+}
+
+.wanderlust-navbar {
+    min-height: 5rem;
+    padding: 0.65rem 0;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(17, 24, 39, 0.06);
+}
+
+.wanderlust-navbar-inner {
+    gap: 1rem;
+}
+
+.wanderlust-navbar .navbar-brand {
+    margin-right: 0.5rem;
+}
+
+.wanderlust-navbar-content {
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.navbar-nav {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.navbar-search-wrap {
+    flex: 1;
+    min-width: 0;
+}
+
+.navbar-search {
+    width: min(100%, 34rem);
+    margin: 0 auto;
+    gap: 0.5rem;
+}
+
+.navbar-search .form-control {
+    min-width: 0;
+    border-radius: 999px;
+    padding-inline: 1rem;
+}
+
+.navbar-search .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-shrink: 0;
+    padding-inline: 1rem;
+    border-radius: 999px;
+    color: black;
+}
+
+.navbar-search .btn:hover {
+    color: #fff;
+}
+
+.navbar-account-links {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+}
+
+.navbar-toggler {
+    border-color: rgba(34, 34, 34, 0.2);
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(250, 66, 77, 0.2);
+}
+
+.fa-compass {
+    color: #fa424d;
+    font-size: 2.5rem;
+}
+
+.nav-link {
+    color: #222222 !important;
+}
+
+.filter-bar {
+    margin: 0.5rem 0 1.5rem;
+}
+
+.filter-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.filter {
+    flex: 0 0 auto;
+    min-width: 4.25rem;
+    margin: 0;
+    padding: 0.65rem 0.25rem 0.25rem;
+    color: #222;
+    text-align: center;
+    opacity: 0.72;
+    cursor: pointer;
+    text-decoration: none;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.filter:hover,
+.filter.active {
+    color: #fa424d;
+    opacity: 1;
+}
+
+.filter i {
+    font-size: 1.45rem;
+}
+
+.filter p {
+    margin: 0.35rem 0 0;
+    font-size: 0.75rem;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.tax-toggle {
+    order: 2;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    min-height: 2.75rem;
+    margin-left: auto;
+    padding: 0.45rem 0.75rem;
+    border: 1px solid #d7d7d7;
+    border-radius: 0.75rem;
+    background: #fff;
+    white-space: nowrap;
+}
+
+.tax-toggle .form-check {
+    margin: 0;
+}
+
+.filter-more {
+    order: 1;
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    min-height: 2.75rem;
+    padding: 0.45rem 0.8rem;
+    border: 1px solid #d7d7d7;
+    border-radius: 0.75rem;
+    background: #fff;
+    color: #222;
+    font: inherit;
+    font-size: 0.875rem;
+    white-space: nowrap;
+}
+
+.filter-more:hover,
+.filter-more[aria-expanded="true"] {
+    border-color: #fa424d;
+    color: #c92f3a;
+}
+
+.filter-more[hidden],
+.filter-tray[hidden] {
+    display: none !important;
+}
+
+.filter-tray {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    padding: 0.5rem;
+    border: 1px solid #ececec;
+    border-radius: 1rem;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(17, 24, 39, 0.07);
+}
+
+.f-info-links a {
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-info-links a:hover {
+    color: #fa424d;
+}
+
+.f-info > div {
+    width: 100%;
+}
+
+.f-info {
+    text-align: center;
+    background-color: #ebebeb;
+    padding: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+
+.f-info-socials i {
+    color: #222222;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+.page-wrap {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+}
+
+@media (min-width: 768px) {
+    .f-info > div {
+        width: auto;
+    }
+}
+
+.card-body {
+    border: none !important;
+}
+
+.listing-card {
+    border: none !important;
+}
+
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.listing-link {
+    text-decoration: none;
+}
+
+.card-img-overlay {
+    opacity: 0;
+}
+
+.card-img-overlay:hover {
+    opacity: 0.2;
+    background-color: #ebebeb;
+}
+
+.add-btn {
+    background-color: #fa424d !important;
+    border: none !important;
+}
+
+.show-img {
+    height: clamp(16rem, 40vh, 28rem);
+}
+
+.show-card {
+    width: 100%;
+}
+
+.btn {
+    background-color: #fa424d;
+    border: none !important;
+}
+
+body:has(.auth-shell) .page-wrap {
+    height: 100vh;
+    min-height: 0;
+    overflow: hidden;
+}
+
+body:has(.auth-shell) .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.auth-shell {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.auth-card {
+    width: min(520px, 100%);
+    max-height: 100%;
+    overflow-y: auto;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 1.25rem;
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 24px 60px rgba(17, 24, 39, 0.12);
+}
+
+.auth-badge {
+    display: inline-block;
+    margin-bottom: 0.4rem;
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(250, 66, 77, 0.12);
+    color: #b42328;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.auth-title {
+    margin-bottom: 0.75rem;
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #111827;
+}
+
+.auth-form .form-label {
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.25rem;
+}
+
+.auth-field {
+    margin-bottom: 0.4rem;
+}
+
+.auth-form .form-control {
+    height: 44px;
+    border-radius: 0.9rem;
+    border: 1px solid #e5e7eb;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-form .form-control:focus {
+    border-color: #fa424d;
+    box-shadow: 0 0 0 0.2rem rgba(250, 66, 77, 0.12);
+}
+
+.auth-form .valid-feedback,
+.auth-form .invalid-feedback {
+    font-size: 0.78rem;
+}
+
+.auth-submit {
+    width: 100%;
+    margin-top: 0.25rem;
+    padding: 0.65rem 0.8rem;
+    border-radius: 0.65rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #fa424d 0%, #d93b48 100%);
+    border: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-submit:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 28px rgba(250, 66, 77, 0.25);
+}
+
+@media (max-width: 768px) {
+    .wanderlust-navbar-content {
+        align-items: stretch;
+        gap: 0.5rem;
+        padding: 0.75rem 0 0.25rem;
+    }
+
+    .navbar-search {
+        width: 100%;
+        max-width: none;
+        margin: 0.25rem 0;
+    }
+
+    .navbar-account-links {
+        align-items: flex-start;
+        gap: 0;
+    }
+
+    .auth-shell {
+        padding: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .wanderlust-navbar {
+        min-height: 4.25rem;
+    }
+
+    .wanderlust-navbar-inner {
+        gap: 0.5rem;
+    }
+
+    .filter-row {
+        gap: 0.35rem;
+    }
+
+    .filter {
+        min-width: 3.75rem;
+        padding-inline: 0.1rem;
+    }
+
+    .filter i {
+        font-size: 1.25rem;
+    }
+
+    .filter p {
+        font-size: 0.68rem;
+    }
+
+    .tax-toggle {
+        padding-inline: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .filter-more {
+        gap: 0.3rem;
+        padding-inline: 0.55rem;
+        font-size: 0.78rem;
+    }
+
+    .auth-card {
+        padding: 1rem;
+    }
+
+    .auth-title {
+        font-size: 1.8rem;
+    }
+
+    .auth-form .form-control {
+        height: 40px;
+    }
+
+    .auth-field {
+        margin-bottom: 0.3rem;
+    }
+}
+
+
+#map {
+    width: 100%;
+    max-width: 100%;
+    height: clamp(16rem, 50vh, 25rem);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+@media (max-width: 576px) {
+    #map {
+        height: 18rem;
+    }
+}

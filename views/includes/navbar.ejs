@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg sticky-top wanderlust-navbar">
+  <div class="container-fluid wanderlust-navbar-inner">
+    <a class="navbar-brand" href="/listings" aria-label="Wanderlust home"><i class="fa-solid fa-compass"></i></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse wanderlust-navbar-content" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="/listings">Explore</a>
+      </div>
+      <div class="navbar-search-wrap">
+          <form class="d-flex navbar-search" role="search" action="/listings" method="GET">
+            <% if (typeof selectedCategory !== 'undefined' && selectedCategory) { %>
+              <input type="hidden" name="category" value="<%= selectedCategory %>">
+            <% } %>
+            <input class="form-control" type="search" name="q" placeholder="Search your destination" aria-label="Search" value="<%= typeof searchQuery !== 'undefined' ? searchQuery : '' %>" required/>
+            <button class="btn btn-outline-danger" type="submit" aria-label="Search">
+              <i class="fa-brands fa-sistrix" aria-hidden="true"></i>
+              <span>Search</span>
+            </button>
+            <% if (typeof searchQuery !== 'undefined' && searchQuery) { %>
+              <a class="btn btn-outline-secondary" href="<%= typeof selectedCategory !== 'undefined' && selectedCategory ? '/listings?category=' + encodeURIComponent(selectedCategory) : '/listings' %>" aria-label="Clear search">
+                Clear
+              </a>
+            <% } %>
+          </form>
+      </div>
+      <div class="navbar-nav navbar-account-links">
+        <a class="nav-link" href="/listings/new">New Listing</a>
+        <% if(!currentUser){ %>
+          <a class="nav-link" href="/signup"><b>Sign Up</b></a>
+          <a class="nav-link" href="/login"><b>Log In</b></a>
+        <% } else { %>  
+          <a class="nav-link" href="/logout">Log Out</a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>
