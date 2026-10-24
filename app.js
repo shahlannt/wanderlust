@@ -72,6 +72,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.urlencoded({extended:true}));
 
+app.get("/", (req, res) => {
+    res.redirect("/listings");
+});
+
 //user routes
 app.use("/", users);
 
